@@ -64,6 +64,24 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             animator.SetTrigger("jump");
         }
- 
+    }
+    public void Sit(InputAction.CallbackContext context)
+    {
+        if (context.performed) 
+        {
+            animator.SetBool("isSitting", true);
+        }
+        else if (context.canceled) 
+        {
+            animator.SetBool("isSitting", false);
+        }
+    }
+    public void Climb(InputAction.CallbackContext context)
+    {
+        if (isGrounded)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            animator.SetTrigger("jump");
+        }
     }
 }
