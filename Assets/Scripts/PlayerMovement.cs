@@ -139,11 +139,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(groundCheck.position, groundCheckRadius);
+        //Gizmos.color = Color.red;
+        //Gizmos.DrawSphere(groundCheck.position, groundCheckRadius);
 
-        Gizmos.color = Color.blue;
-        Vector3 direction = isFacingRight ? transform.right : -transform.right;
-        Gizmos.DrawRay(wallCheck.position, direction * wallCheckDistance);
+        //Gizmos.color = Color.blue;
+        //Vector3 direction = isFacingRight ? transform.right : -transform.right;
+        //Gizmos.DrawRay(wallCheck.position, direction * wallCheckDistance);
     }
 }
