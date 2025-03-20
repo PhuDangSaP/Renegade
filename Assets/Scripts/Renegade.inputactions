@@ -24,27 +24,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Sit",
+                    "name": "Grab",
                     "type": "Button",
-                    "id": "f9647083-dab9-4f03-b11e-e51d6082ca0c",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Climb",
-                    "type": "Button",
-                    "id": "f15126cd-b9d4-4846-a4f6-76faae701f97",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Attack",
-                    "type": "Button",
-                    "id": "513eb4bd-b4c6-4bf4-bd12-53ab3644eefc",
+                    "id": "fb78b009-5210-4f2f-b576-25e17c3e6496",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -175,56 +157,23 @@
                 },
                 {
                     "name": "",
-                    "id": "56095c6a-54d3-4c7a-8dcf-921f5cd90d50",
-                    "path": "<Keyboard>/s",
+                    "id": "1194c431-6dc7-4179-9acf-df6ba48f9aad",
+                    "path": "<Keyboard>/ctrl",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Sit",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Grab",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "d75956be-c2c1-4ce0-8a9c-a706c1bf7ef1",
-                    "path": "<Keyboard>/downArrow",
+                    "id": "d4520e49-415d-4750-9559-504480c8f263",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Sit",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ca8d3148-a212-4e3d-96d3-25e97f2f62df",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Climb",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c38899af-636f-407a-8b10-781cdc3bd967",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Climb",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "326428eb-96ef-4474-82cc-53f3b05e16f1",
-                    "path": "<Keyboard>/j",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Attack",
+                    "groups": ";Gamepad",
+                    "action": "Grab",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

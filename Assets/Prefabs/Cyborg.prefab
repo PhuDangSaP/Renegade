@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 2328861179515485460}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.104, y: -0.65, z: 0}
+  m_LocalPosition: {x: 0.104, y: -0.706, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 2948116968569535647}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.256, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -251,10 +251,11 @@ GameObject:
   - component: {fileID: 2100946153712132463}
   - component: {fileID: 6899558979714355309}
   - component: {fileID: 8157533744306262440}
-  - component: {fileID: 1080584026780291256}
-  m_Layer: 0
+  - component: {fileID: 2021725243555987284}
+  - component: {fileID: 2855996586101871955}
+  m_Layer: 7
   m_Name: Cyborg
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -454,9 +455,9 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080584026780291256}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: Move
+      - m_Target: {fileID: 2021725243555987284}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: OnMoveInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -510,9 +511,9 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080584026780291256}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: Jump
+      - m_Target: {fileID: 2021725243555987284}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: OnJumpInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -525,19 +526,7 @@ MonoBehaviour:
     m_ActionId: 88465802-438e-4b41-918e-ae85a3ad1eee
     m_ActionName: 'Player/Jump[/Keyboard/space]'
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1080584026780291256}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: Sit
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: f9647083-dab9-4f03-b11e-e51d6082ca0c
     m_ActionName: 'Player/Sit[/Keyboard/s,/Keyboard/downArrow]'
   - m_PersistentCalls:
@@ -553,7 +542,7 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1080584026780291256
+--- !u!114 &2021725243555987284
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -562,19 +551,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 6692869169168147816}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8ebe8412668ac04393cea90d9e87a0a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3741cb1b7f745424b9b60a74094cfc8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  jumpForce: 16
-  groundCheckRadius: 0.2
-  wallCheckDistance: 0.15
-  wallSlideSpeed: 1
-  groundCheck: {fileID: 2212910027262652431}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  wallCheck: {fileID: 5608834505389084394}
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 64
+  inputHoldTime: 0.2
+--- !u!114 &2855996586101871955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6692869169168147816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c4945df3d7f46a4b9bbfd24c09a056e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerData: {fileID: 11400000, guid: 7ddac2c6c08708c4c9933f5d16b30b79, type: 2}
+  groudCheck: {fileID: 2212910027262652431}
