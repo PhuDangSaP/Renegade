@@ -5,6 +5,7 @@ public class PlayerInAirState : PlayerAbilityState
     private int xInput;
     private bool isGrounded;
     private bool isTouchingWall;
+    private bool isTouchingWallBack;
     private bool jumpInput;
     private bool grabInput;
     private bool jumpInputStop;
@@ -20,6 +21,7 @@ public class PlayerInAirState : PlayerAbilityState
 
         isGrounded = player.CheckIfGrounded();
         isTouchingWall = player.CheckIfTouchingWall();
+        isTouchingWallBack = player.CheckIfTouchingWallBack();
     }
     public override void Enter()
     {
@@ -45,6 +47,11 @@ public class PlayerInAirState : PlayerAbilityState
         if (isGrounded && player.CurrentVelocity.y < 0.01f)
         {
             stateMachine.ChangeState(player.LandState);
+        }
+        else if(jumpInput && (isTouchingWall||isTouchingWallBack ))
+        {
+            player.WallJumpState.DetermineWallJumpDirection(isTouchingWall);
+            stateMachine.ChangeState(player.WallJumpState);
         }
         else if (jumpInput && player.JumpState.CanJump())
         {

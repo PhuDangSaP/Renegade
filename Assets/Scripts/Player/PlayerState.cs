@@ -7,6 +7,7 @@ public class PlayerState
     protected PlayerData playerData;
 
     protected bool isAnimationFinished;
+    protected bool isExistingState;
 
     protected float startTime;
     private string animBoolName;
@@ -25,11 +26,13 @@ public class PlayerState
         player.Anim.SetBool(animBoolName, true);
         startTime = Time.time;
         isAnimationFinished = false;
+        isExistingState = false;
         Debug.Log(animBoolName);
     }
     public virtual void Exit()
     {
         player.Anim.SetBool(animBoolName, false);
+        isExistingState = true;
     }
 
     public virtual void LogicUpdate()
